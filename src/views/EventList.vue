@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Events</h1>
-    <EventCard v-for="event in events" :key="event.id"/>
+    <EventCard v-for="event in events" :key="event.id" :event="event"/>
   </div>
 </template>
 
