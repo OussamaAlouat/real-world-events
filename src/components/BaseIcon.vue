@@ -1,7 +1,7 @@
 <template>
   <div class="icon-wrapper">
     <svg class="icon" :width="width" :height="height">
-      <use v-bind="{'xlink:href':'/feather-sprite.svg#'+name}"/>
+      <use v-bind="{ 'xlink:href': '/feather-sprite.svg#' + name }" />
     </svg>
     <slot></slot>
   </div>
@@ -18,8 +18,8 @@ export default {
     height: {
       type: [Number, String],
       default: 24
-    },
-  },
+    }
+  }
 }
 </script>
 
@@ -39,4 +39,4 @@ export default {
   fill: none;
   margin-right: 6px;
 }
-</style>>
+</style>
