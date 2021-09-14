@@ -10,11 +10,18 @@
     <address>{{ event.location }}</address>
     <h2>Event details</h2>
     <p>{{ event.description }}</p>
-    <h2>Attendees
-      <span class="badge -fill-gradient">{{ event.attendees ? event.attendees.length : 0 }}</span>
+    <h2>
+      Attendees
+      <span class="badge -fill-gradient">{{
+        event.attendees ? event.attendees.length : 0
+      }}</span>
     </h2>
     <ul class="list-group">
-      <li v-for="(attendee, index) in event.attendees" :key="index" class="list-item">
+      <li
+        v-for="(attendee, index) in event.attendees"
+        :key="index"
+        class="list-item"
+      >
         <b>{{ attendee.name }}</b>
       </li>
     </ul>
@@ -22,10 +29,10 @@
 </template>
 
 <script>
-import  EventService from "@/services/EventService";
+import EventService from '@/services/EventService'
 export default {
   props: {
-    id: {      
+    id: {
       type: [Number, String]
     }
   },
@@ -36,13 +43,13 @@ export default {
   },
   created() {
     EventService.getEvent(this.id)
-    .then(response => {
-      console.log(response.data);
-      this.event = response.data;
-    })
-    .catch(err => {
-      console.log('Error: ', err)
-    })
+      .then(response => {
+        console.log(response.data)
+        this.event = response.data
+      })
+      .catch(err => {
+        console.log('Error: ', err)
+      })
   }
 }
 </script>

@@ -1,13 +1,13 @@
 <template>
   <div>
     <h1>Events</h1>
-    <EventCard v-for="event in events" :key="event.id" :event="event"/>
+    <EventCard v-for="event in events" :key="event.id" :event="event" />
   </div>
 </template>
 
 <script>
-import EventCard from '@/components/EventCard.vue';
-import EventService from '../services/EventService';
+import EventCard from '@/components/EventCard.vue'
+import EventService from '../services/EventService'
 
 export default {
   components: {
@@ -21,16 +21,14 @@ export default {
   created() {
     EventService.getEvents()
       .then(response => {
-        console.log(response.data);
-        this.events = response.data;
+        console.log(response.data)
+        this.events = response.data
       })
       .catch(err => {
-        console.log(err);
-      });
+        console.log(err)
+      })
   }
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
